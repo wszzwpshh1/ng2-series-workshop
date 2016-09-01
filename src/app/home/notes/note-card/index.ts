@@ -1,4 +1,5 @@
 import {Component} from '@angular/core'
+import {Input} from '@angular/core'
 
 @Component({
     selector: 'note-card',
@@ -7,5 +8,13 @@ import {Component} from '@angular/core'
 })
 
 export class NoteCardComponent{
+    //note = {
+    //    title: 'title',
+    //    value: 'value'
+    //}
+    @Input() note
 
+    onChecked(){
+        console.log('click');
+    }
 }

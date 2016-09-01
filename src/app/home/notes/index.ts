@@ -9,5 +9,15 @@ import {NoteCardComponent} from './note-card'
 })
 
 export class NotesComponent{
+    notes = [
+        {
+            title: 'title',
+            value: 'value'
+        },
+        {
+            title: 'title2',
+            value: 'value'
+        }
+    ];
 
 }
