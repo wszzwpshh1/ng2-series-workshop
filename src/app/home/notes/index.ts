@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
-import {NoteCardComponent} from './note-card/index'
-import {NoteCreaterComponent} from './note-creater/index'
+import {NoteCardComponent} from './note-card'
+import {NoteCreaterComponent} from './note-creater'
 
 @Component({
     selector: 'notes',
@@ -27,5 +27,9 @@ export class NotesComponent{
 
     checkCard(note, i) {
         this.notes.splice(i, 1);
+    }
+
+    addNote(note) {
+        this.notes.push(note);
     }
 }

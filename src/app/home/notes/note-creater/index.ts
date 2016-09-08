@@ -1,4 +1,5 @@
-import {Component} from '@angular/core'
+import {Component, Output, EventEmitter} from '@angular/core'
+import {isEmpty} from 'lodash'
 
 @Component({
     selector: 'note-creater',
@@ -7,12 +8,24 @@ import {Component} from '@angular/core'
 })
 
 export class NoteCreaterComponent{
+    @Output() onCreateNote = new EventEmitter();
+
     newNote = {
         title: 'title',
         value: 'value'
     }
 
     createNote() {
-        console.log('submit');
+        //pass the value, not the reference
+        const {title, value} = this.newNote;
+
+        if(isEmpty(title) || isEmpty(value)) {
+            return false;
+        }
+
+        this.onCreateNote.emit({title, value});
+
+        //return false to prevent the page jumping
+        return false;
     }
 }
