@@ -1,5 +1,4 @@
-import {Component} from '@angular/core'
-import {Input} from '@angular/core'
+import {Component, Input, Output, EventEmitter} from '@angular/core'
 
 @Component({
     selector: 'note-card',
@@ -8,13 +7,13 @@ import {Input} from '@angular/core'
 })
 
 export class NoteCardComponent{
-    //note = {
-    //    title: 'title',
-    //    value: 'value'
-    //}
     @Input() note
+    @Input() i
+    @Output() checked = new EventEmitter();
 
-    onChecked(){
-        console.log('click');
+
+    onChecked() {
+        console.log(this.i);
+        this.checked.emit(this.note);
     }
 }

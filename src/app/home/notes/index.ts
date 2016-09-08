@@ -11,13 +11,20 @@ import {NoteCardComponent} from './note-card'
 export class NotesComponent{
     notes = [
         {
-            title: 'title',
-            value: 'value'
+            title: 'title1',
+            value: 'value1'
         },
         {
             title: 'title2',
-            value: 'value'
+            value: 'value2'
+        },
+        {
+            title: 'title3',
+            value: 'value3'
         }
-    ];
+    ]
 
+    checkCard(note, i) {
+        this.notes.splice(i, 1);
+    }
 }
