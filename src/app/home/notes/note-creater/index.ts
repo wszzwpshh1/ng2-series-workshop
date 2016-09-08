@@ -7,5 +7,12 @@ import {Component} from '@angular/core'
 })
 
 export class NoteCreaterComponent{
+    newNote = {
+        title: 'title',
+        value: 'value'
+    }
 
+    createNote() {
+        console.log('submit');
+    }
 }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
-import {NoteCardComponent} from './note-card'
-import {NoteCreaterComponent} from './note-creater'
+import {NoteCardComponent} from './note-card/index'
+import {NoteCreaterComponent} from './note-creater/index'
 
 @Component({
     selector: 'notes',
