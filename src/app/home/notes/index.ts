@@ -1,11 +1,12 @@
 import {Component} from '@angular/core'
 import {NoteCardComponent} from './note-card'
+import {NoteCreaterComponent} from './note-creater'
 
 @Component({
     selector: 'notes',
     template: require('./notes.html'),
     styles: [require('./notes.css')],
-    directives: [NoteCardComponent]
+    directives: [NoteCardComponent, NoteCreaterComponent]
 })
 
 export class NotesComponent{
