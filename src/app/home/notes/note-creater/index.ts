@@ -9,11 +9,16 @@ import {isEmpty} from 'lodash'
 
 export class NoteCreaterComponent{
     @Output() onCreateNote = new EventEmitter();
-
     newNote = {
         title: 'title',
         value: 'value'
-    }
+    };
+    isFocus:boolean = false;
+
+
+    clearNewNote() {
+        this.newNote = {title: '', value: ''};
+    };
 
     createNote() {
         //pass the value, not the reference
@@ -24,8 +29,17 @@ export class NoteCreaterComponent{
         }
 
         this.onCreateNote.emit({title, value});
+        this.clearNewNote();
 
         //return false to prevent the page jumping
         return false;
+    };
+
+    expand() {
+        this.isFocus = true;
+    };
+
+    test() {
+        this.isFocus = false;
     }
 }
