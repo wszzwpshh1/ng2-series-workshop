@@ -7,13 +7,13 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 })
 
 export class NoteCardComponent{
-    @Input() note
-    @Input() i
+    @Input() note;
+    @Input() i;
     @Output() checked = new EventEmitter();
 
 
     onChecked() {
         console.log(this.i);
         this.checked.emit(this.note);
-    }
+    };
 }
